@@ -1,0 +1,948 @@
+---
+layout: base
+title: Trust-Tech | Home
+---
+<style>
+.tab-area{
+	position: relative;
+}
+.bg-color{
+    background:#f5f5f5;
+}
+.fix {
+	overflow:hidden;
+}
+.area-padding{
+	padding: 80px 0px;
+}
+.hidden {
+  display: none;
+}
+
+.flow {
+  background-color: #f9f9f9;
+  font-family: "Uniform", sans-serif;
+  padding: 38px 0;
+}
+@media (min-width: 761px) {
+  .flow {
+    padding: 55px 0;
+  }
+}
+@media (min-width: 1170px) {
+  .flow {
+    padding: 70px 0;
+  }
+}
+.flow__head {
+  text-align: center;
+  color: #575252;
+}
+.flow__title {
+  font-size: 32px;
+  margin: 0;
+}
+@media (min-width: 761px) {
+  .flow__title {
+    font-size: 38px;
+  }
+}
+@media (min-width: 1170px) {
+  .flow__title {
+    font-size: 45px;
+  }
+}
+.flow__steps {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: max-content 1fr max-content 1fr max-content 1fr max-content 1fr max-content;
+  grid-template-columns: -webkit-max-content 1fr -webkit-max-content 1fr -webkit-max-content 1fr -webkit-max-content 1fr -webkit-max-content;
+  grid-template-columns: max-content 1fr max-content 1fr max-content 1fr max-content 1fr max-content;
+  list-style: none;
+  margin: 14px 0;
+  padding: 0;
+}
+
+@media (min-width: 1170px) {
+  .flow__steps {
+    margin: 15px 75px 100px;
+  }
+}
+.flow__body {
+  display: flex;
+}
+
+.flow__steps-descriptions {
+  display: -ms-grid;
+  display: grid;
+  width: 100%;
+}
+
+@media (max-width: 768px) {
+	.flow__steps {
+		display: none!important;
+	}
+
+  .flow__body {
+    flex-direction: column!important;
+  }
+}
+@media (min-width: 1170px) {
+  .flow__body {
+    margin: 0 150px;
+  }
+}
+
+.step {
+  cursor: pointer;
+  display: block;
+  position: relative;
+  text-align: center;
+}
+
+.step__2 {
+  cursor: pointer;
+  display: block;
+  position: relative;
+  text-align: center;
+}
+
+.step:hover polygon {
+  fill: #e0e0e0;
+}
+
+.step polygon {
+  fill: transparent;
+  stroke-width: 3px;
+  stroke: #e0e0e0;
+  transition: all 0.2s ease-in-out;
+}
+.step__icon {
+  display: flex;
+  position: relative;
+}
+
+.step__icon svg {
+  height: 58px;
+}
+
+@media (min-height: 761px) {
+  .step__icon svg {
+    height: 64px;
+  }
+}
+
+.step__number {
+  color: #575252;
+  font-size: 18px;
+  font-weight: bold;
+  left: 50%;
+  position: absolute;
+  top: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  transition: color 0.3s ease-in-out;
+}
+@media (min-width: 761px) {
+  .step__number {
+    font-size: 23px;
+  }
+}
+.step__name {
+  color: #575252;
+  display: none;
+  font-size: 20px;
+  font-weight: normal;
+  margin: 0;
+  position: absolute;
+}
+@media (min-width: 1170px) {
+  .step__name {
+    align-items: end;
+    display: flex;
+    justify-content: center;
+    left: 50%;
+    min-height: 80px;
+    padding: 80px 20px 0;
+    -webkit-transform: translate(-50%, -50%);
+            transform: translate(-50%, -50%);
+    width: 300px;
+  }
+}
+.step__arrow {
+  background-repeat: no-repeat;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 1fr max-content;
+      grid-template-columns: 1fr -webkit-max-content;
+      grid-template-columns: 1fr max-content;
+  -ms-grid-rows: min-content;
+      grid-template-rows: -webkit-min-content;
+      grid-template-rows: min-content;
+  padding: 0 20px;
+  -webkit-transform: translate(4px, 50%);
+          transform: translate(4px, 50%);
+  width: calc(100% + 15px);
+}
+.step__arrow::before {
+  content: "";
+  background-color: #a8a8a8;
+  display: inline-block;
+  height: 1px;
+  -ms-grid-row: 1;
+  grid-row: 1;
+  -ms-grid-column: 1;
+  grid-column: 1;
+  line-height: 0;
+  vertical-align: bottom;
+}
+.step__arrow img {
+  height: 20px;
+  width: 20px;
+  -webkit-transform: translate(-14px, -50%);
+          transform: translate(-14px, -50%);
+  -ms-grid-row: 1;
+  grid-row: 1;
+  -ms-grid-column: 2;
+  grid-column: 2;
+}
+.step__subtitle {
+  color: #1aa15f;
+  font-size: 23px;
+  margin-top: 0;
+  padding-top: 0;
+}
+.step__description {
+  -ms-grid-column: 1;
+  grid-column: 1;
+  -ms-grid-row: 1;
+  grid-row: 1;
+  display: flex;
+  justify-content: center;
+}
+.step__image-container{
+
+}
+.step__body-content {
+	
+}
+
+.interrior {
+  margin:10px;
+}
+.step__image {
+  height: 100px;
+}
+
+@media (min-width: 761px) {
+  .step__image-container {
+    flex: 0 0 40%;
+    justify-content: flex-end;
+    margin-bottom: 0;
+    padding: 0 40px 0 15px;
+  }
+   .step__image {
+    height: 130px;
+  }
+}
+@media (min-width: 1170px) {
+  .step__image-container {
+    flex: 0 0 47%;
+    padding: 0 50px 0 15px;
+  }
+    .step__image {
+    height: 160px;
+  }
+   .step__body-text {
+    max-width: 410px;
+  }
+}
+.step__body-text {
+  color: #828386;
+  font-family: "Open Sans", sans-serif;
+  font-size: 16px;
+  line-height: 1.69;
+}
+
+@media (max-width: 768px) {
+  .step__arrow {
+    display: none;
+  }
+}
+@media (min-width: 1170px) {
+  .step__body-text {
+    max-width: 410px;
+  }
+}
+
+#step-6__label {
+  -ms-grid-column: 1;
+  grid-column: 1;
+}
+
+#step-6__arrow {
+  -ms-grid-column: 2;
+  grid-column: 2;
+}
+
+#step-7__label {
+  -ms-grid-column: 3;
+  grid-column: 3;
+}
+
+#step-7__arrow {
+  -ms-grid-column: 4;
+  grid-column: 4;
+}
+
+#step-8__label {
+  -ms-grid-column: 5;
+  grid-column: 5;
+}
+
+#step-8__arrow {
+    -ms-grid-column: 6;
+    grid-column: 6;
+}
+
+#step-9__label {
+    -ms-grid-column: 7;
+    grid-column: 7;
+}
+
+#step-9__arrow {
+    -ms-grid-column: 8;
+    grid-column: 8;
+}
+
+#step-10__label {
+    -ms-grid-column: 9;
+    grid-column: 9;
+}
+
+#step-6:checked ~ * #step-6__label polygon,
+#step-7:checked ~ * #step-6__label polygon,
+#step-7:checked ~ * #step-7__label polygon,
+#step-8:checked ~ * #step-6__label polygon,
+#step-8:checked ~ * #step-7__label polygon,
+#step-8:checked ~ * #step-8__label polygon,
+#step-9:checked ~ * #step-6__label polygon,
+#step-9:checked ~ * #step-7__label polygon,
+#step-9:checked ~ * #step-8__label polygon,
+#step-9:checked ~ * #step-9__label polygon,
+#step-10:checked ~ * #step-6__label polygon,
+#step-10:checked ~ * #step-7__label polygon,
+#step-10:checked ~ * #step-8__label polygon,
+#step-10:checked ~ * #step-9__label polygon,
+#step-10:checked ~ * #step-10__label polygon {
+  fill: #1aa15f;
+  stroke: transparent;
+}
+
+
+#step-6:checked ~ * #step-6__label .step__number,
+#step-7:checked ~ * #step-6__label .step__number,
+#step-7:checked ~ * #step-7__label .step__number,
+#step-8:checked ~ * #step-6__label .step__number,
+#step-8:checked ~ * #step-7__label .step__number,
+#step-8:checked ~ * #step-8__label .step__number,
+#step-9:checked ~ * #step-6__label .step__number,
+#step-9:checked ~ * #step-7__label .step__number,
+#step-9:checked ~ * #step-8__label .step__number,
+#step-9:checked ~ * #step-9__label .step__number,
+#step-10:checked ~ * #step-6__label .step__number,
+#step-10:checked ~ * #step-7__label .step__number,
+#step-10:checked ~ * #step-8__label .step__number,
+#step-10:checked ~ * #step-9__label .step__number,
+#step-10:checked ~ * #step-10__label .step__number {
+  color: #fff;
+}
+
+#step-6 ~ * #step-6__description,
+#step-7 ~ * #step-7__description,
+#step-8 ~ * #step-8__description,
+#step-9 ~ * #step-9__description,
+#step-10 ~ * #step-10__description {
+  opacity: 0;
+  transition: all 0.5s;
+}
+
+#step-6:checked ~ * #step-6__description,
+#step-7:checked ~ * #step-7__description,
+#step-8:checked ~ * #step-8__description,
+#step-9:checked ~ * #step-9__description,
+#step-10:checked ~ * #step-10__description {
+  opacity: 1;
+  z-index: 1;
+}
+</style>
+
+<div class="intro-area intro-home">
+    <div class="bg-wrapper">
+      <img src="{{ "/assets/img/background/trusttech-background.jpg" | absolute_url }}" alt="">
+    </div>
+    <div class="intro-content">
+      <div class="slider-content">
+        <div class="container">
+          <div class="row">
+            <div class="col-md-6 col-sm-6 col-xs-12">
+              <div class="slide-all-text">
+            <!-- layer 1 -->
+                  <div class="layer-1 wow fadeInUp" data-wow-delay="0.3s">
+                      <h2 style="color:#fff">An engineering company that help build <span style="color:#1AA15F">Innovative Technologies</span></h2>
+                  </div>
+                  <!-- layer 2 -->
+                  <div class="layer-2 wow fadeInUp" data-wow-delay="0.5s">
+                      <span style="color:#fff">
+												We're a Building Management Systems and Engineering Company.
+												We provide creative solutions to our diverse clientele on security, safety and computer needs with
+												our major core competence in a new field of home, office and industrial automation, security and
+												system integrations.
+											</span>
+                  </div>
+                  <div class="layer-3 wow fadeInUp" data-wow-delay="0.7s">
+                      <a href="/contact" class="ready-btn" >Get In Touch</a>
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-6 col-sm-6 hidden-xs">
+                <div class="slide-images-inner wow fadeInUp" data-wow-delay="0.5s">
+                    <div class="slide-images">
+                        <img src="{{ "/assets/img/project/120amps-phase-3-01.png" | absolute_url }}" alt="">
+                    </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- End Slider Area -->
+<!-- Start Brand Area -->
+<div class="about-area area-padding" id="about">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6 col-sm-6 col-xs-12">
+                <div class="about-content">
+                    <img src="{{ "/assets/img/project/about_us_img.png" | absolute_url }}" alt="">
+                </div>
+            </div>
+           <div class="col-md-6 col-sm-6 col-xs-12">
+                <div class="about-text">
+                    <h3>About our <span class="color">Automatic Change Over</span> switch.</h3>
+                      <p>Replacing manual change-over systems, Automatic Change-Over Switch System (ACS) helps consumers to define their new electricity auto switch system.
+                        ACS is a device that switches off a generator and changes to mains current automatically
+												without the need for you to do it manually.</p>
+                    <ul class="hidden-sm">
+                        <li> Automatic change over from generator to mains current</li>
+                        <li> Automatically switches off your generator</li>
+                        <li> Protects home appliances from power surge</li>
+                        <li> Uninterrupted power switching system</li>
+                    </ul>
+                    <a class="ab-btn" href="#pricing" data-target="#pricing"> Get Quote</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- End Banner Area -->
+
+<!-- Core UI Design Process Area -->
+<div class="tab-area bg-color fix area-padding" id="services">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12 col-sm-12 col-xs-12">
+                <div class="section-headline text-center wow fadeInUP">
+                    <h3><span class="color">Our</span> Services</h3>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12 col-sm-12 col-xs-12">
+                <input type="radio" name="step__2" id="step-6" class="hidden" checked/>
+                <input type="radio" name="step__2" id="step-7" class="hidden" />
+                <input type="radio" name="step__2" id="step-8" class="hidden" />
+                <input type="radio" name="step__2" id="step-9" class="hidden" />
+                <input type="radio" name="step__2" id="step-10" class="hidden" />
+
+                <div class="flow__process">
+                    <div class="flow__steps">
+                        <label class="step" aria-describedby="step-6__name"
+                          id="step-6__label" for="step-6">
+                            <div class="step__icon"><span class="step__number"> 1 </span>
+                                <svg xmlns="http://www.w3.org/2000/svg"
+                                  width="60.622"
+                                  height="70"
+                                  viewBox="0 0 60.622 70">
+                                  <polygon points="30.311 3.088, 57.947 19.044, 57.947 50.956, 30.311 66.912, 2.674 50.956, 2.674 19.044, 30.311 3.088"></polygon>
+                                </svg>
+                            </div>
+                            <h5 class="step__name" id="step-6__name"> CCTV </h5>
+                        </label>
+                        <div class="step__arrow" id="step-6__arrow" aria-hidden="true">
+                          <img src="{{ "/assets/img/project/chevron.svg" | absolute_url }}"/>
+                        </div>
+                        <label class="step" aria-describedby="step-7__name" id="step-7__label" for="step-7">
+                            <div class="step__icon"><span class="step__number">2</span>
+                                <svg xmlns="http://www.w3.org/2000/svg"
+                                  width="60.622"
+                                  height="70"
+                                  viewBox="0 0 60.622 70">
+                                  <polygon points="30.311 3.088, 57.947 19.044, 57.947 50.956, 30.311 66.912, 2.674 50.956, 2.674 19.044, 30.311 3.088"></polygon>
+                                </svg>
+
+                                </div>
+                                  <h3 class="step__name"
+                                      id="step-7__name">
+                                    Access Control
+                                  </h3>
+                            </label>
+                        <div class="step__arrow" id="step-7__arrow" aria-hidden="true">
+                          <img src="{{ "/assets/img/project/chevron.svg" | absolute_url }}"/>
+                        </div>
+                        <label class="step" aria-describedby="step-8__name" id="step-8__label" for="step-8">
+                            <div class="step__icon">
+                                <span class="step__number"> 3 </span>
+                                    <svg xmlns="http://www.w3.org/2000/svg"
+                                      width="60.622"
+                                      height="70"
+                                      viewBox="0 0 60.622 70">
+                                      <polygon points="30.311 3.088, 57.947 19.044, 57.947 50.956, 30.311 66.912, 2.674 50.956, 2.674 19.044, 30.311 3.088"></polygon>
+                                    </svg>
+                            </div>
+                              <h3 class="step__name"
+                                  id="step-8__name">
+                                Smart Home
+                              </h3>
+                        </label>
+                        <div class="step__arrow" id="step-8__arrow" aria-hidden="true">
+                          <img src="{{ "/assets/img/project/chevron.svg" | absolute_url }}"/>
+                        </div>
+                        <label class="step" aria-describedby="step-9__name" id="step-9__label" for="step-9">
+                            <div class="step__icon">
+                                <span class="step__number"> 4 </span>
+                                    <svg xmlns="http://www.w3.org/2000/svg"
+                                      width="60.622"
+                                      height="70"
+                                      viewBox="0 0 60.622 70">
+                                      <polygon points="30.311 3.088, 57.947 19.044, 57.947 50.956, 30.311 66.912, 2.674 50.956, 2.674 19.044, 30.311 3.088"></polygon>
+                                    </svg>
+                            </div>
+                              <h3 class="step__name"
+                                  id="step-9__name">
+                                Video Conference
+                              </h3>
+                        </label>
+                        <div class="step__arrow" id="step-9__arrow" aria-hidden="true">
+                          <img src="{{ "/assets/img/project/chevron.svg" | absolute_url }}"/>
+                        </div>
+                        <label class="step" aria-describedby="step-10__name" id="step-10__label" for="step-10">
+                            <div class="step__icon">
+                                <span class="step__number"> 5 </span>
+                                    <svg xmlns="http://www.w3.org/2000/svg"
+                                      width="60.622"
+                                      height="70"
+                                      viewBox="0 0 60.622 70">
+                                      <polygon points="30.311 3.088, 57.947 19.044, 57.947 50.956, 30.311 66.912, 2.674 50.956, 2.674 19.044, 30.311 3.088"></polygon>
+                                    </svg>
+                            </div>
+                              <h3 class="step__name"
+                                  id="step-10__name">
+                                Alarm Systems
+                              </h3>
+                        </label>
+                    </div>
+                </div>
+                <!-- Begin Steps -->
+                <div class="flow__body">
+                    <div class="flow__steps-descriptions">
+                        <div class="step__description" id="step-6__description">
+                            <div class="step__image-container">
+																<img src="{{ "/assets/img/project/cctv-view.png" | absolute_url}}" alt="cctv-solution">
+														</div>
+                            <div class="step__body-content wow fadeInUp">
+                                <h3 class="step__subtitle">CCTV - Survelance</h3>
+                                <p class="step__body-text">
+																	We provide cameras that are carefully selected for different locations to achieve a desired
+																	result. The Mini dome cameras are for internal locations while the rugged
+																	day/night outdoor cameras are for external locations.
+																	The system can be fitted with a motion detector which immediately starts recording once motion is detected.
+																</p>
+                            </div>
+                        </div>
+                        <div class="step__description" id="step-7__description">
+                            <div class="step__image-container">
+                                <img src="{{ "/assets/img/project/access-control-sytems.png" | absolute_url}}" alt="access-control-security">
+                            </div>
+                            <div class="step__body-content">
+                                <h3 class="step__subtitle">Access Control</h3>
+                                <p class="step__body-text">Once prototypes are approved, developers make the prototypes a working product.</p>
+                            </div>
+                       </div>
+                        <div class="step__description" id="step-8__description">
+                          <div class="step__image-container">
+                          		<img src="{{ "/assets/img/project/smart_home_view.png" | absolute_url}}" alt="smart-home" />
+                          </div>
+                          <div class="step__body-content">
+                            <h3 class="step__subtitle">Smart Home Systems</h3>
+                            <p class="step__body-text">
+																We provide security devices for monitoring and controlling entry to rooms, offices, apartments and buildings.
+																Because keys are easily duplicated, these systems are the best means to control and monitor who enters where and when.
+														</p>
+                          </div>
+                        </div>
+                        <div class="step__description" id="step-9__description">
+                          <div class="step__image-container">
+                            	<img src="{{ "/assets/img/project/video-conferencing-system.png" | absolute_url}}" alt="video-conferencing">
+                          </div>
+                          <div class="step__body-content">
+                            <h3 class="step__subtitle">Video Conference Systems</h3>
+                            <p class="step__body-text">Video teleconference or videoconferencing,
+															comprises the technologies for the reception and transmission of audio-video signals by users in different locations,
+															 for communication between people in real time.
+														</p>
+                          </div>
+                        </div>
+                        <div class="step__description" id="step-10__description">
+                          <div class="step__image-container">
+                          	<img src="{{ "/assets/img/project/alarm-system-unit.png" | absolute_url }}" alt="alarm-systems">
+                          </div>
+                          <div class="step__body-content">
+                            <h3 class="step__subtitle"> Security Alarm Systems</h3>
+                            <p class="step__body-text">
+															<b>-Fire Protection System:</b> This system is meant for small and medium sized buildings.
+																	Smoke and heat detectors are installed in every room/enclosure for early detection of fire incident and fire
+																	alarm bells are installed in strategic locations. <br/>
+
+															<b>-Perimeter Security Fencing:</b> An electric fence is a barrier that uses electric shocks to deter people from crossing a boundary.
+														</p>
+                          </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- End Steps -->
+            </div>
+        </div>
+    </div>
+</div>
+<!-- End UI Design Process -->
+
+<!-- start pricing area -->
+<div class="pricing-area pricing-area-3 bg-color fix area-padding-2" id="pricing">
+    <div class="container">
+        <div class="row">
+					<div class="col-md-12 col-sm-12 col-xs-12">
+						<div class="section-headline text-center">
+							<h3>Our Pricing</h3>
+							<p>our premium device pricing list</p>
+						</div>
+					</div>
+				</div>
+        <div class="row">
+            <div class="pricing-content">
+                <div class="col-md-4 col-sm-4 col-xs-12">
+                    <div class="table-list">
+                        <div class="top-price-inner">
+                            <h4>Single Phase 120AMPs</h4>
+                            <div class="rates">
+                                <span class="prices"><span class="naira">&#8358;</span>25,000</span><span class="users">ONLY</span>
+                            </div>
+                        </div>
+                        <ol>
+                            <li class="ti-check">installation guide</li>
+                            <li class="ti-check">one year warranty</li>
+                            <li class="ti-check">live preview</li>
+                            <li class="ti-check cross">unlimited support</li>
+                        </ol>
+                        <div class="price-btn">
+                            <a href="order-from.html">Call Us</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 col-sm-4 col-xs-12">
+                    <div class="table-list">
+                        <span class="base">Series B</span>
+                        <div class="top-price-inner">
+                            <h4>Single Phase 120AMPs</h4>
+                            <div class="rates">
+                                <span class="prices"><span class="naira">&#8358;</span>35,000</span><span class="users">ONLY</span>
+                            </div>
+                        </div>
+                        <ol>
+                          <li class="ti-check ">installation guide</li>
+                          <li class="ti-check">one year warranty</li>
+                          <li class="ti-check">live preview</li>
+                          <li class="ti-check cross">unlimited support</li>
+                        </ol>
+                        <div class="price-btn">
+                            <a href="order-from.html">Call Us</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 col-sm-4 col-xs-12">
+                    <div class="table-list">
+                        <div class="top-price-inner">
+                            <h4>Three Phase 120AMPs</h4>
+                            <div class="rates">
+                                <span class="prices"><span class="naira">&#8358;</span>60,000</span><span class="users">ONLY</span>
+                            </div>
+                        </div>
+                        <ol>
+                            <li class="ti-check">installation guide</li>
+                            <li class="ti-check">one year warranty</li>
+                            <li class="ti-check">live preview</li>
+                            <li class="ti-check cross">unlimited support</li>
+                        </ol>
+                        <div class="price-btn">
+                            <a href="order-from.html">Call Us</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="pricing-content">
+                <div class="col-md-4 col-sm-4 col-xs-12">
+                    <div class="table-list">
+                        <div class="top-price-inner">
+                            <h4>Double Phase 120AMPs</h4>
+                            <div class="rates">
+                                <span class="prices"><span class="naira">&#8358;</span>70,000</span><span class="users">ONLY</span>
+                            </div>
+                        </div>
+                        <ol>
+                            <li class="ti-check">installation guide</li>
+                            <li class="ti-check">one year warranty</li>
+                            <li class="ti-check">live preview</li>
+                            <li class="ti-check">unlimited support</li>
+                        </ol>
+                        <div class="price-btn">
+                            <a href="order-from.html">Call Us</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 col-sm-4 col-xs-12">
+                    <div class="table-list">
+                        <div class="top-price-inner">
+                            <h4>Three Phase 125AMPs</h4>
+                            <div class="rates">
+                                <span class="prices"><span class="naira">&#8358;</span>90,000</span><span class="users">ONLY</span>
+                            </div>
+                        </div>
+                        <ol>
+                          <li class="ti-check ">free installation</li>
+                          <li class="ti-check">one year warranty</li>
+                          <li class="ti-check">live preview</li>
+                          <li class="ti-check">unlimited support</li>
+                        </ol>
+                        <div class="price-btn">
+                            <a href="order-from.html">Call Us</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 col-sm-4 col-xs-12">
+                    <div class="table-list">
+                      <span class="base">Series B</span>
+                        <div class="top-price-inner">
+                            <h4>Three Phase 125AMPs</h4>
+                            <div class="rates">
+                                <span class="prices"><span class="naira">&#8358;</span>140,000</span><span class="users">ONLY</span>
+                            </div>
+                        </div>
+                        <ol>
+                            <li class="ti-check">free installation</li>
+                            <li class="ti-check">one year warranty</li>
+                            <li class="ti-check">live preview</li>
+                            <li class="ti-check">unlimited support</li>
+                        </ol>
+                        <div class="price-btn">
+                            <a href="order-from.html">Call Us</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- End pricing table area -->
+
+<!-- Start testimonials Area -->
+<div class="reviews-area bg-color fix area-padding">
+    <div class="container">
+        <div class="row">
+            <div class="reviews-top">
+                <div class="col-md-5 col-sm-5 col-xs-12">
+                    <div class="testimonial-inner">
+                        <div class="review-head">
+                            <h3>What our customers say <span class="color"> about our products</span> and services</h3>
+                            <p></p>
+                            <a class="reviews-btn" href="#">Get Quote</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-7 col-sm-7 col-xs-12">
+                    <div class="reviews-content">
+                        <!-- start testimonial carousel -->
+                        <div class="testimonial-carousel item-indicator">
+                            <div class="single-testi">
+                                <div class="testi-text">
+                                    <div class="clients-text">
+                                        <div class="client-rating">
+                                          <a href="#"><i class="fas fa-star"></i></a>
+                                          <a href="#"><i class="fas fa-star"></i></a>
+                                          <a href="#"><i class="fas fa-star"></i></a>
+                                          <a href="#"><i class="fas fa-star"></i></a>
+                                          <a href="#"><i class="fas fa-star"></i></a>
+                                        </div>
+                                        <p>We are very much satisfied with your services and installation. The device has been working as it should.</p>
+                                    </div>
+                                    <div class="testi-img ">
+                                        <img src="https://img.icons8.com/fluent/48/000000/guest-male.png"/>
+                                        <div class="guest-details">
+                                            <h4>Mr. Patrick Michael</h4>
+                                            <span class="guest-rev">CEO - <a href="#">Jokapat Logistics</a></span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- End single item -->
+                            <div class="single-testi">
+                                <div class="testi-text">
+                                    <div class="clients-text">
+                                        <div class="client-rating">
+                                          <a href="#"><i class="fas fa-star"></i></a>
+                                          <a href="#"><i class="fas fa-star"></i></a>
+                                          <a href="#"><i class="fas fa-star"></i></a>
+                                          <a href="#"><i class="fas fa-star"></i></a>
+                                          <a href="#"><i class="fas fa-star"></i></a>
+                                        </div>
+                                        <p>We no doubt trust in your products and they deliver well. Thanks TrustTech!</p>
+                                    </div>
+                                    <div class="testi-img ">
+                                        <img src="https://img.icons8.com/fluent/48/000000/guest-male.png"/>
+                                        <div class="guest-details">
+                                            <h4>Mr. Bunmi Olumekun</h4>
+                                            <span class="guest-rev">CEO - <a href="#">Rely Global Resources</a></span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- End single item -->
+                            <div class="single-testi">
+                                <div class="testi-text">
+                                    <div class="clients-text">
+                                        <div class="client-rating">
+                                          <a href="#"><i class="fas fa-star"></i></a>
+                                          <a href="#"><i class="fas fa-star"></i></a>
+                                          <a href="#"><i class="fas fa-star"></i></a>
+                                          <a href="#"><i class="fas fa-star"></i></a>
+                                          <a href="#"><i class="fas fa-star"></i></a>
+                                        </div>
+                                        <p>Our electrical endpoint has been effecient since the installation of your device. Please keep up the good work.</p>
+                                    </div>
+                                    <div class="testi-img ">
+                                        <img src="https://img.icons8.com/fluent/48/000000/guest-male.png"/>>
+                                        <div class="guest-details">
+                                            <h4>Engr. Dunmoye Moses</h4>
+                                            <span class="guest-rev">Clients - <a href="#">General customer</a></span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- End single item -->
+                            <div class="single-testi">
+                                <div class="testi-text">
+                                    <div class="clients-text">
+                                        <div class="client-rating">
+                                            <a href="#"><i class="fas fa-star"></i></a>
+                                            <a href="#"><i class="fas fa-star"></i></a>
+                                            <a href="#"><i class="fas fa-star"></i></a>
+                                            <a href="#"><i class="fas fa-star"></i></a>
+                                            <a href="#"><i class="fas fa-star"></i></a>
+                                        </div>
+                                        <p>We are saving time, and time they say is money. Your device has worked beyond expectation and our business activities are efficiently maximise.</p>
+                                    </div>
+                                    <div class="testi-img ">
+                                        <img src="https://img.icons8.com/fluent/48/000000/guest-male.png"/>
+                                        <div class="guest-details">
+                                            <h4>Engr. Sodiq</h4>
+                                            <span class="guest-rev">Clients - <a href="#">General customer</a></span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- End single item -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- End testimonials end -->
+<!--Blog Area Start-->
+<div class="blog-area fix area-padding-2" id="products">
+    <div class="container">
+        <div class="row">
+          <div class="col-md-12 col-sm-12 col-xs-12">
+            <div class="section-headline text-center">
+              <h3>Our <span class="color">Product Range</span></h3>
+              <p>Automatic Change Over Systems Device(ACS)</p>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+            <div class="blog-grid home-blog">
+                <!-- Start single blog -->
+                <div class="col-md-4 col-sm-6 col-xs-12">
+                    <div class="single-blog">
+                       <div class="blog-image">
+                          <a class="image-scale" href="#">
+                            <img src="{{ "/assets/img/project/phase-3-120amps-A.png" | absolute_url }}" alt="">
+                          </a>
+                        </div>
+                        <div class="blog-content">
+                              <a href="#">
+                                  <h4 class="text-center">3-Phase 120amps Series-B</h4>
+                              </a>
+                          </div>
+                      </div>
+                  </div>
+                <!-- End single blog -->
+                <!-- Start single blog -->
+                <div class="col-md-4 col-sm-6 col-xs-12">
+                    <div class="single-blog">
+                       <div class="blog-image">
+                          <a class="image-scale" href="#">
+                            <img src="{{ "/assets/img/project/120amps-phase-3.png" | absolute_url }}" alt="">
+                          </a>
+                        </div>
+                        <div class="blog-content">
+                            <a href="#">
+                                <h4 class="text-center">3-Phase 125amps Series-A</h4>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 col-sm-6 col-xs-12">
+                    <div class="single-blog">
+                        <div class="blog-image">
+                          <a class="image-scale" href="#">
+                            <img src="{{ "/assets/img/project/single-phase-120Amps.png" | absolute_url }}" alt="">
+                          </a>
+                        </div>
+                        <div class="blog-content">
+                            <a href="#">
+                                <h4 class"text-center">Single-Phase 120amps</h4>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <!-- End single blog -->
+            </div>
+        </div>
+        <!-- End row -->
+    </div>
+</div>
+
+{% include footer.html %}
